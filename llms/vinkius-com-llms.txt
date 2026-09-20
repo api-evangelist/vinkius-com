@@ -1,0 +1,137 @@
+# Vinkius
+
+> The AI connectivity layer for your everyday apps. Vinkius is the AI Connectivity Cloud: 9,258 managed Connectors exposing 63,093 capabilities that AI agents call directly. One URL per Connector works in ChatGPT, Claude, Gemini, Cursor and 16 more AI clients, with every connection authenticated, authorized and managed in one place. Every Connector ships a prerendered page plus a step-by-step setup guide for each supported client. Available in English, Portuguese, French, Spanish, Japanese and German.
+
+## Pages
+
+- [Home](https://vinkius.com/): overview
+- [How-it-works](https://vinkius.com/en/how-it-works): how-it-works
+- [Ai-catalog](https://vinkius.com/en/ai-connections): ai-connections
+- [Pricing](https://vinkius.com/en/pricing): pricing
+- [Affiliate-program](https://vinkius.com/en/affiliate-program): affiliate-program
+- [About](https://vinkius.com/en/about): about
+- [Careers](https://vinkius.com/en/careers): careers
+- [Open-data-initiative](https://vinkius.com/en/open-data-initiative): open-data-initiative
+- [Infrastructure](https://vinkius.com/en/infrastructure): infrastructure
+- [Open-source](https://vinkius.com/en/open-source): open-source
+- [Create-connector](https://vinkius.com/en/create-connector): create-connector
+- [Build-with-vinkius](https://vinkius.com/en/build-with-vinkius): build-with-vinkius
+- [Ai-governance](https://vinkius.com/en/ai-governance): ai-governance
+
+## Categories
+
+The 50 largest Connector categories — each page lists its Connectors, one URL each, prerendered under /en/ai-connections/category:
+
+- [Productivity](https://vinkius.com/en/ai-connections/category/productivity): 1,390 connectors
+- [Developer Tools](https://vinkius.com/en/ai-connections/category/developer-tools): 1,147 connectors
+- [Finance](https://vinkius.com/en/ai-connections/category/finance): 1,086 connectors
+- [Data Analytics](https://vinkius.com/en/ai-connections/category/data-analytics): 973 connectors
+- [Engineering](https://vinkius.com/en/ai-connections/category/engineering): 612 connectors
+- [Industry Titans](https://vinkius.com/en/ai-connections/category/industry-titans): 604 connectors
+- [Analytics](https://vinkius.com/en/ai-connections/category/analytics): 576 connectors
+- [Marketing Automation](https://vinkius.com/en/ai-connections/category/marketing-automation): 523 connectors
+- [Data Management](https://vinkius.com/en/ai-connections/category/data-management): 454 connectors
+- [Health](https://vinkius.com/en/ai-connections/category/health): 427 connectors
+- [Artificial Intelligence](https://vinkius.com/en/ai-connections/category/artificial-intelligence): 423 connectors
+- [Finance Accounting](https://vinkius.com/en/ai-connections/category/finance-accounting): 422 connectors
+- [Customer Relationship Management](https://vinkius.com/en/ai-connections/category/customer-relationship-management): 351 connectors
+- [Business Intelligence](https://vinkius.com/en/ai-connections/category/business-intelligence): 350 connectors
+- [E-Commerce](https://vinkius.com/en/ai-connections/category/ecommerce): 333 connectors
+- [Cloud Infrastructure](https://vinkius.com/en/ai-connections/category/cloud-infrastructure): 320 connectors
+- [Agriculture](https://vinkius.com/en/ai-connections/category/agriculture): 319 connectors
+- [Utilities](https://vinkius.com/en/ai-connections/category/utilities): 314 connectors
+- [Science](https://vinkius.com/en/ai-connections/category/science): 278 connectors
+- [Erp Operations](https://vinkius.com/en/ai-connections/category/erp-operations): 277 connectors
+- [Knowledge Management](https://vinkius.com/en/ai-connections/category/knowledge-management): 273 connectors
+- [Government Public Data](https://vinkius.com/en/ai-connections/category/government-public-data): 268 connectors
+- [Communication Messaging](https://vinkius.com/en/ai-connections/category/communication-messaging): 266 connectors
+- [Customer Support](https://vinkius.com/en/ai-connections/category/customer-support): 263 connectors
+- [Collaboration](https://vinkius.com/en/ai-connections/category/collaboration): 262 connectors
+- [Sports](https://vinkius.com/en/ai-connections/category/sports): 247 connectors
+- [Content Management](https://vinkius.com/en/ai-connections/category/content-management): 245 connectors
+- [Optimization](https://vinkius.com/en/ai-connections/category/optimization): 237 connectors
+- [Fitness](https://vinkius.com/en/ai-connections/category/fitness): 229 connectors
+- [Security Compliance](https://vinkius.com/en/ai-connections/category/security-compliance): 222 connectors
+- [Sales Automation](https://vinkius.com/en/ai-connections/category/sales-automation): 203 connectors
+- [Mathematics](https://vinkius.com/en/ai-connections/category/mathematics): 200 connectors
+- [Chemistry](https://vinkius.com/en/ai-connections/category/chemistry): 196 connectors
+- [Project Management](https://vinkius.com/en/ai-connections/category/project-management): 195 connectors
+- [Human Resources](https://vinkius.com/en/ai-connections/category/human-resources): 189 connectors
+- [Scientific Research](https://vinkius.com/en/ai-connections/category/scientific-research): 189 connectors
+- [Wellness](https://vinkius.com/en/ai-connections/category/wellness): 188 connectors
+- [Devops Cicd](https://vinkius.com/en/ai-connections/category/devops-cicd): 184 connectors
+- [Construction](https://vinkius.com/en/ai-connections/category/construction): 175 connectors
+- [Gaming Entertainment](https://vinkius.com/en/ai-connections/category/gaming-entertainment): 168 connectors
+- [Physics](https://vinkius.com/en/ai-connections/category/physics): 167 connectors
+- [Monitoring Observability](https://vinkius.com/en/ai-connections/category/monitoring-observability): 164 connectors
+- [Image Video](https://vinkius.com/en/ai-connections/category/image-video): 158 connectors
+- [Billing Subscriptions](https://vinkius.com/en/ai-connections/category/billing-subscriptions): 154 connectors
+- [Money Moves](https://vinkius.com/en/ai-connections/category/money-moves): 144 connectors
+- [Document Management](https://vinkius.com/en/ai-connections/category/document-management): 142 connectors
+- [Loved by Developers](https://vinkius.com/en/ai-connections/category/loved-by-devs): 141 connectors
+- [Social Media](https://vinkius.com/en/ai-connections/category/social-media): 140 connectors
+- [AI Frontier](https://vinkius.com/en/ai-connections/category/ai-frontier): 136 connectors
+- [Economics](https://vinkius.com/en/ai-connections/category/economics): 131 connectors
+
+## Tags
+
+The 50 biggest Connector tags — /en/ai-connections/tag/<slug> lists its Connectors:
+
+- [Automation](https://vinkius.com/en/ai-connections/tag/automation): 197 connectors
+- [Workflow Automation](https://vinkius.com/en/ai-connections/tag/workflow-automation): 169 connectors
+- [Compliance](https://vinkius.com/en/ai-connections/tag/compliance): 154 connectors
+- [Optimization](https://vinkius.com/en/ai-connections/tag/optimization): 150 connectors
+- [Api Integration](https://vinkius.com/en/ai-connections/tag/api-integration): 145 connectors
+- [Wellness](https://vinkius.com/en/ai-connections/tag/wellness): 131 connectors
+- [Roi](https://vinkius.com/en/ai-connections/tag/roi): 131 connectors
+- [Safety](https://vinkius.com/en/ai-connections/tag/safety): 129 connectors
+- [Economics](https://vinkius.com/en/ai-connections/tag/economics): 127 connectors
+- [Physics](https://vinkius.com/en/ai-connections/tag/physics): 119 connectors
+- [Chemistry](https://vinkius.com/en/ai-connections/tag/chemistry): 113 connectors
+- [Finance](https://vinkius.com/en/ai-connections/tag/finance): 112 connectors
+- [Scheduling](https://vinkius.com/en/ai-connections/tag/scheduling): 111 connectors
+- [Metrics](https://vinkius.com/en/ai-connections/tag/metrics): 110 connectors
+- [Wine](https://vinkius.com/en/ai-connections/tag/wine): 104 connectors
+- [Mcp](https://vinkius.com/en/ai-connections/tag/mcp): 100 connectors
+- [Sleep](https://vinkius.com/en/ai-connections/tag/sleep): 100 connectors
+- [Logistics](https://vinkius.com/en/ai-connections/tag/logistics): 96 connectors
+- [Analytics](https://vinkius.com/en/ai-connections/tag/analytics): 96 connectors
+- [Invoicing](https://vinkius.com/en/ai-connections/tag/invoicing): 92 connectors
+- [Contact Management](https://vinkius.com/en/ai-connections/tag/contact-management): 88 connectors
+- [Training](https://vinkius.com/en/ai-connections/tag/training): 88 connectors
+- [Surfing](https://vinkius.com/en/ai-connections/tag/surfing): 88 connectors
+- [Performance](https://vinkius.com/en/ai-connections/tag/performance): 83 connectors
+- [Llm](https://vinkius.com/en/ai-connections/tag/llm): 82 connectors
+- [Trading](https://vinkius.com/en/ai-connections/tag/trading): 82 connectors
+- [Health](https://vinkius.com/en/ai-connections/tag/health): 82 connectors
+- [Validation](https://vinkius.com/en/ai-connections/tag/validation): 81 connectors
+- [Efficiency](https://vinkius.com/en/ai-connections/tag/efficiency): 77 connectors
+- [Customer Engagement](https://vinkius.com/en/ai-connections/tag/customer-engagement): 75 connectors
+- [Financial Modeling](https://vinkius.com/en/ai-connections/tag/financial-modeling): 75 connectors
+- [Risk Assessment](https://vinkius.com/en/ai-connections/tag/risk-assessment): 74 connectors
+- [Fitness](https://vinkius.com/en/ai-connections/tag/fitness): 74 connectors
+- [Agriculture](https://vinkius.com/en/ai-connections/tag/agriculture): 73 connectors
+- [Accelerator](https://vinkius.com/en/ai-connections/tag/accelerator): 73 connectors
+- [Data Extraction](https://vinkius.com/en/ai-connections/tag/data-extraction): 72 connectors
+- [Valuation](https://vinkius.com/en/ai-connections/tag/valuation): 72 connectors
+- [Mining](https://vinkius.com/en/ai-connections/tag/mining): 72 connectors
+- [Farming](https://vinkius.com/en/ai-connections/tag/farming): 70 connectors
+- [Venture Capital](https://vinkius.com/en/ai-connections/tag/venture-capital): 69 connectors
+- [Open Data](https://vinkius.com/en/ai-connections/tag/open-data): 68 connectors
+- [Risk Management](https://vinkius.com/en/ai-connections/tag/risk-management): 67 connectors
+- [Web3](https://vinkius.com/en/ai-connections/tag/web3): 67 connectors
+- [Engineering](https://vinkius.com/en/ai-connections/tag/engineering): 66 connectors
+- [Statistics](https://vinkius.com/en/ai-connections/tag/statistics): 65 connectors
+- [Concrete](https://vinkius.com/en/ai-connections/tag/concrete): 65 connectors
+- [Chemical Engineering](https://vinkius.com/en/ai-connections/tag/chemical-engineering): 65 connectors
+- [Crm](https://vinkius.com/en/ai-connections/tag/crm): 64 connectors
+- [Team Collaboration](https://vinkius.com/en/ai-connections/tag/team-collaboration): 63 connectors
+- [Knowledge Base](https://vinkius.com/en/ai-connections/tag/knowledge-base): 63 connectors
+
+## Optional
+
+- [Sitemap](https://vinkius.com/sitemap.xml): machine-readable page index
+- [Robots](https://vinkius.com/robots.txt): crawl policy — every crawler, search engine or AI, is fully allowed
+- [Catalog search](https://vinkius.com/en/ai-connections): full Connectors catalog with search and browse
+- [Connector pages](https://vinkius.com/en/ai-agent-connect/<slug>): every Connector's own page, indexed in the sitemap
+- [Contact](mailto:sales@vinkius.com)

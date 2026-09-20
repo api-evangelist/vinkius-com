@@ -1,0 +1,65 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+provider: Vinkius
+providerId: vinkius-com
+created: '2026-09-20'
+modified: '2026-09-20'
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/en/pricing
+sources:
+- https://vinkius.com/en/pricing
+description: Four self-serve monthly tiers metered in Connector calls, plus an enterprise "Talk to sales" tier. Every plan includes the full managed catalog; the plan sets call volume, history and controls. Prices in USD as shown on the default (monthly) toggle; an annual toggle exists but its prices were not captured. The site's mcp.json also names a Free plan, which the pricing page does not price or describe.
+currency: USD
+plan_count: 5
+overage:
+  price: $5 per 10,000 requests
+  behavior: Connections remain active above the monthly allowance; additional usage is added to the next invoice.
+refunds: Subscriptions are non-refundable; cancel any time, access remains through the end of the billing period.
+plans:
+- id: lite
+  name: Lite
+  price: 9
+  period: month
+  included_calls_per_month: 5000
+  marginal_rate_per_call: 0.0018
+  activity_history: 3 days
+  skill_storage: 100 MB
+  support: Standard
+  features: [Full managed catalog, One-click client setup, Hosted Connector runtime, Encrypted credentials]
+- id: starter
+  name: Starter
+  recommended: true
+  price: 29
+  period: month
+  included_calls_per_month: 25000
+  marginal_rate_per_call: 0.0012
+  activity_history: 3 days
+  skill_storage: 100 MB
+  support: Standard
+  features: [Host custom Connectors, OpenAPI and YAML import, MCP Fusion deployment, Private Connectors, Connector sharing]
+- id: pro
+  name: Pro
+  price: 89
+  period: month
+  included_calls_per_month: 100000
+  marginal_rate_per_call: 0.0009
+  activity_history: 7 days
+  skill_storage: 200 MB
+  support: Priority
+  features: [Faster Connector execution, Advanced usage analytics, Project workspaces, Audit logs, Automatic data protection policies, Automatic overload protection]
+- id: business
+  name: Business
+  price: 199
+  period: month
+  included_calls_per_month: 500000
+  marginal_rate_per_call: 0.0004
+  activity_history: 30 days
+  skill_storage: 500 MB
+  support: Dedicated SLA
+  features: [Unlimited workspaces, SSO with SAML or OIDC, 'Viewer, editor and admin roles', Service accounts and API keys, Kill switch and circuit breaker, Splunk and Datadog log streaming]
+- id: enterprise
+  name: Enterprise
+  price: null
+  period: null
+  note: Talk to sales - custom Connector portfolio, dedicated account team, contracted uptime SLA, private cloud deployment, custom legal and compliance, volume and multi-region support.

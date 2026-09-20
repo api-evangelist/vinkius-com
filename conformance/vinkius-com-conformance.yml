@@ -1,0 +1,48 @@
+generated: '2026-09-20'
+method: probed
+source: live metadata on https://edge.vinkius.com/.well-known/ plus the Connect SDK docs; no OpenAPI is published to derive from
+description: Cross-cutting standards Vinkius demonstrably implements. Marketing compliance claims (GDPR, EU AI Act alignment) are recorded as claims with their URL, not as certifications - Vinkius names no SOC 2 / ISO 27001 certification of its own (its security page attributes those to infrastructure partners).
+standards:
+- id: oauth2
+  conforms: true
+  evidence: https://edge.vinkius.com/.well-known/oauth-authorization-server (authorization_code + refresh_token)
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: https://edge.vinkius.com/.well-known/oauth-authorization-server (200 application/json)
+- id: rfc9728-protected-resource-metadata
+  conforms: true
+  evidence: https://edge.vinkius.com/.well-known/oauth-protected-resource (200 application/json)
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint https://edge.vinkius.com/oauth/register in the authorization-server metadata
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported [S256]
+- id: oidc
+  conforms: false
+  evidence: https://edge.vinkius.com/.well-known/openid-configuration returned 404
+- id: mcp
+  conforms: true
+  evidence: https://edge.vinkius.com/{token}/mcp exposes Mcp-Session-Id and Mcp-Protocol-Version headers (probed)
+- id: idempotency
+  conforms: true
+  evidence: https://vinkius.com/learn/en/connect-sdk/errors - Idempotency-Key header on capability execution (partial scope; see conventions)
+- id: pagination
+  conforms: true
+  evidence: page-based lists with meta.current_page / meta.last_page (github.com/vinkius-labs/ai-connect-sdk src/core/pagination.ts)
+- id: rfc9457
+  conforms: false
+  evidence: live error body is {"error":"..."} with content-type application/json, not application/problem+json
+- id: security-txt
+  conforms: false
+  evidence: https://vinkius.com/.well-known/security.txt returned 404
+claims:
+- id: gdpr
+  claim: GDPR compliance, DPA and Article 28 subprocessor list published
+  evidence: https://vinkius.com/legal/data-processing-agreement
+- id: eu-ai-act
+  claim: '"The platform provides controls designed to support key AI Act requirements, including transparency, record-keeping, human oversight, and agent containment."'
+  evidence: https://vinkius.com/en/pricing
+  observed: edge responses carry x-ai-act-disclosure "EU Reg. 2024/1689 Art. 13"
+domain_standards: []
+domain_standards_note: No domain-standard signature applies; there is no published contract to read one from.

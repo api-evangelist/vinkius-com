@@ -1,0 +1,182 @@
+generated: '2026-09-20'
+method: probed
+source: live unauthenticated GET of each /.well-known/ path on every known Vinkius host, 2026-09-20
+note: 'Three real documents served: RFC 8414 authorization-server metadata and RFC 9728 protected-resource metadata
+  on the MCP resource host edge.vinkius.com, and a /.well-known/mcp.json site tool manifest on vinkius.com. No security.txt,
+  openid-configuration, api-catalog, ai-plugin.json or A2A agent card on any host. cloud.vinkius.com and docs.vinkius.com
+  answer 200 text/html for every path (SPA shells) and are recorded as misses.'
+hosts:
+- host: vinkius.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 200
+    content_type: application/json
+    file: well-known/vinkius-com-mcp.json
+- host: www.vinkius.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/openid-configuration
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/api-catalog
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/agent-card.json
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/agent.json
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+  - path: /.well-known/mcp.json
+    status: 301
+    note: redirects to https://vinkius.com (apex); see that host
+- host: api.vinkius.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+- host: edge.vinkius.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: well-known/vinkius-com-edge-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: application/json
+    file: well-known/vinkius-com-edge-oauth-protected-resource.json
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+- host: cloud.vinkius.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/mcp.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+- host: docs.vinkius.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+  - path: /.well-known/mcp.json
+    status: 200
+    content_type: text/html
+    note: SPA catch-all HTML shell, not a document - treated as a miss
+- host: mcp.vinkius.com
+  note: host does not resolve (curl 000); the MCP host is edge.vinkius.com
+  documents: []

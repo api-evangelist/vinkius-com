@@ -1,0 +1,38 @@
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/learn/en/connect-sdk/authentication, https://github.com/vinkius-labs/ai-connect-sdk/blob/main/SECURITY.md, https://edge.vinkius.com/.well-known/oauth-authorization-server
+docs: https://vinkius.com/learn/en/connect-sdk/authentication
+description: Vinkius has two credential planes - an application key for the REST API (api.vinkius.com) and connection tokens / OAuth for the MCP Edge (edge.vinkius.com).
+schemes:
+- id: application-key
+  surface: https://api.vinkius.com
+  type: http
+  scheme: bearer
+  detail: >-
+    The SDK is initialised with a public application id (vk_app_*) and one secret application key
+    (vk_app_sk_*). The secret is sent only as an Authorization Bearer header over HTTPS and must stay
+    server-side. A leaked key is scoped to a single application; cross-tenant access returns 404.
+  key_prefixes: [vk_app_, vk_app_sk_]
+  user_scope: Every user operation is additionally addressed by an externalId in the route (/apps/{app}/users/{externalId}/...); internal ids are prefixed vk_app_user_.
+  environments: Use different App IDs and keys for development, staging and live traffic.
+  observed: GET https://api.vinkius.com/catalog/mcps without a key returns 401 {"error":"Unauthenticated."}
+- id: connection-token
+  surface: https://edge.vinkius.com
+  type: apiKey
+  in: path
+  detail: MCP clients connect to https://edge.vinkius.com/{token}/mcp where the token is a vk_live_* connection token shown once in the Vinkius Cloud console. The runtime token never reaches the Connect SDK - execution is proxied by the API.
+  key_prefixes: [vk_live_]
+  docs: https://vinkius.com/learn/en/tokens
+- id: edge-oauth
+  surface: https://edge.vinkius.com
+  type: oauth2
+  flows: [authorization_code, refresh_token]
+  pkce: S256
+  dynamic_client_registration: https://edge.vinkius.com/oauth/register
+  token_endpoint_auth_methods: [none, client_secret_post]
+  scopes: scopes/vinkius-com-scopes.yml
+  metadata: well-known/vinkius-com-edge-oauth-authorization-server.json
+- id: console-sso
+  surface: https://cloud.vinkius.com
+  detail: Console sign-in with Google or GitHub; SSO with SAML or OIDC on the Business plan (pricing page).
+credentials_storage: End-user connector credentials are write-only - set through the API and never returned; the SDK reports only which keys are configured.

@@ -1,0 +1,59 @@
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/learn/en/connect-sdk/errors and https://vinkius.com/learn/en/connect-sdk/reference
+docs: https://vinkius.com/learn/en/connect-sdk/errors
+format: custom
+description: >-
+  Error taxonomy of the Vinkius API as documented for the Connect SDK. No OpenAPI is published, so this is
+  the documented SDK error contract, not a derivation from response schemas. Every VinkiusError carries
+  code, status, requestId (when the server supplied one) and details (the parsed API response). Observed
+  raw envelope on the live API is {"error":"<message>"}.
+envelope:
+  observed: '{"error": "Unauthenticated."}'
+  sdk_fields: [code, status, requestId, details]
+problem_types:
+- code: auth_error
+  class: AuthError
+  status: [401, 403]
+  title: The application key was rejected
+  remediation: Check key rotation and environment.
+- code: not_found
+  class: NotFoundError
+  status: [404]
+  title: The addressed user, connection or resource does not exist
+- code: validation_error
+  class: ValidationError
+  status: [422]
+  title: The request payload failed server-side validation
+  extra_fields: 'errors: Record<string, string[]>'
+- code: rate_limit
+  class: RateLimitError
+  status: [429]
+  title: Too many requests
+  extra_fields: retryAfterMs
+  remediation: Back off using the response's retry information (Retry-After).
+- code: quota_exceeded
+  class: QuotaError
+  status: [429]
+  title: The plan's included quota is exhausted
+  detail: HTTP 429 carrying isError true or an upgrade_url.
+  extra_fields: upgradeUrl
+  remediation: Surface an upgrade path.
+- code: overage_blocked
+  class: OverageError
+  status: [402]
+  title: Overage protection rejected the request
+  extra_fields: upgradeUrl
+- code: connector_not_connected
+  class: ConnectorNotConnectedError
+  status: []
+  title: The operation requires a connection that does not exist
+  remediation: Send the user through the connector setup flow.
+- code: config_error
+  class: ConfigError
+  status: [0]
+  title: Local configuration problem, thrown before any request
+other_classes: [ConnectionError, NotImplementedError, ProtocolError, VinkiusError]
+notes:
+- Capability failures are returned as data (result.isError) rather than thrown.
+- Client-side and transport errors use status 0.

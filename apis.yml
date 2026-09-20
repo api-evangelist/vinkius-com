@@ -1,23 +1,143 @@
 aid: vinkius-com
 name: Vinkius
-description: 'Vinkius is a company surfaced via the API Evangelist harvest backlog (source: direct-request)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Vinkius is an AI connectivity cloud: a managed catalog of thousands of hosted Model Context Protocol (MCP) Connectors
+  that AI agents call through one URL per connector, working in ChatGPT, Claude, Gemini, Cursor and other MCP clients. Connectors
+  run in a sealed sandbox on the Vinkius Edge (edge.vinkius.com) with credential encryption, governance policies, audit trails,
+  spend controls and log streaming. Developers build on it with the AI Connect SDK (@vinkius/connect) over the Vinkius API
+  (api.vinkius.com), and publish their own connectors with the open source MCP Fusion TypeScript framework.'
 url: https://raw.githubusercontent.com/api-evangelist/vinkius-com/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:direct-request
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
 specificationVersion: '0.20'
 created: '2026-09-20'
 modified: '2026-09-20'
 tags:
 - Company
-apis: []
+- MCP
+- AI Agents
+- Integrations
+- Connectors
+- AI Governance
+- Developer Tools
+- agent-native
+apis:
+- aid: vinkius-com:vinkius-api
+  name: Vinkius API
+  position: Producing
+  description: 'REST API behind the AI Connect SDK: application users, connector connections, write-only credentials, connection
+    tokens, catalog and marketplace search, plus the execution plane for capabilities. Authenticated with a vk_app_sk_* application
+    key as a Bearer token. No OpenAPI is published; the contract is documented through the first-party TypeScript SDK reference.'
+  humanURL: https://vinkius.com/learn/en/connect-sdk
+  baseURL: https://api.vinkius.com
+  tags:
+  - REST
+  - SDK
+  - Connectors
+  - Credentials
+  properties:
+  - type: Documentation
+    url: https://vinkius.com/learn/en/connect-sdk
+  - type: APIReference
+    url: https://vinkius.com/learn/en/connect-sdk/reference
+  - type: GettingStarted
+    url: https://vinkius.com/learn/en/connect-sdk/quickstart
+  - type: Authentication
+    url: authentication/vinkius-com-authentication.yml
+  - type: ErrorCatalog
+    url: errors/vinkius-com-problem-types.yml
+  - type: Conventions
+    url: conventions/vinkius-com-conventions.yml
+  - type: Idempotency
+    url: conventions/vinkius-com-conventions.yml
+  - type: RateLimits
+    url: rate-limits/vinkius-com-rate-limits.yml
+  - type: ChangeLog
+    url: changelog/vinkius-com-changelog.yml
+  - type: SourceCode
+    url: https://github.com/vinkius-labs/ai-connect-sdk
+  image: https://vinkius.com/og/logo-512.png
+- aid: vinkius-com:vinkius-edge-mcp
+  name: Vinkius Edge MCP
+  position: Producing
+  description: The hosted MCP data plane. Every connector is a remote MCP server at https://edge.vinkius.com/{connection_token}/mcp;
+    the host also serves OAuth 2 authorization-server and protected-resource metadata with dynamic client registration. Tool
+    schemas are per connector and require a connection token.
+  humanURL: https://vinkius.com/en/ai-connections
+  baseURL: https://edge.vinkius.com
+  tags:
+  - MCP
+  - AI Agents
+  - OAuth
+  properties:
+  - type: Documentation
+    url: https://vinkius.com/learn/en
+  - type: MCPServer
+    url: mcp/vinkius-com-mcp.yml
+  - type: OAuthScopes
+    url: scopes/vinkius-com-scopes.yml
+  image: https://vinkius.com/og/logo-512.png
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/vinkius-com-domain-security.yml
 - type: Website
   url: https://vinkius.com/
+- type: DeveloperPortal
+  url: https://vinkius.com/en/build-with-vinkius
+- type: Documentation
+  url: https://vinkius.com/learn/en
+- type: Pricing
+  url: https://vinkius.com/en/pricing
+- type: SignUp
+  url: https://cloud.vinkius.com/
+- type: TermsOfService
+  url: https://vinkius.com/legal/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://vinkius.com/legal/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/vinkius-labs
+- type: Support
+  url: https://github.com/vinkius-labs/vinkius-issues
+- type: ServiceLevelAgreement
+  url: https://vinkius.com/legal/service-level-agreement
+- type: LLMsTxt
+  url: llms/vinkius-com-llms.txt
+- type: Packages
+  url: packages/vinkius-com-packages.yml
+- type: SDKs
+  url: packages/vinkius-com-packages.yml
+- type: CLI
+  url: cli/vinkius-com-cli.yml
+- type: WellKnown
+  url: well-known/vinkius-com-well-known.yml
+- type: Conformance
+  url: conformance/vinkius-com-conformance.yml
+- type: Lifecycle
+  url: lifecycle/vinkius-com-lifecycle.yml
+- type: Plans
+  url: plans/vinkius-com-plans-pricing.yml
+- type: VulnerabilityDisclosure
+  url: security/vinkius-com-vulnerability-disclosure.yml
+- type: Security
+  url: security/vinkius-com-vulnerability-disclosure.yml
+- type: Subprocessors
+  url: https://vinkius.com/legal/subprocessors
+- type: IncidentNotification
+  url: https://vinkius.com/legal/security
+- type: DataSubjectRequest
+  url: https://vinkius.com/legal/privacy-policy
+- type: DataResidency
+  url: https://vinkius.com/legal/subprocessors
+- type: RegulatoryPosture
+  url: regulatory/vinkius-com-regulatory-posture.yml
+image: https://vinkius.com/og/logo-512.png
+x-enrichment:
+  date: '2026-09-20'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v3

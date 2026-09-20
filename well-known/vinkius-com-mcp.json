@@ -1,0 +1,161 @@
+{
+  "name": "Vinkius AI Capabilities",
+  "description": "Discover, connect, and manage AI Capabilities (Model Context Protocol servers) for AI agents. Managed infrastructure with authentication, metering, and zero-configuration setup for Claude, Cursor, ChatGPT, Windsurf, and more.",
+  "url": "https://vinkius.com",
+  "version": "2.0.0",
+  "tools": [
+    {
+      "name": "search_ai_capabilities",
+      "description": "Search for AI Capabilities by keyword to find integrations for AI clients like Claude, Cursor, and ChatGPT.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The search keyword or phrase (e.g. 'email marketing', 'database', 'CRM').",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "navigate_to_ai_capability",
+      "description": "Navigate to a specific AI Capability listing page. Returns capability details, available tools, setup instructions, and supported AI clients.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "The AI Capability slug — a URL-safe identifier (e.g. 'github', 'slack', 'notion', 'stripe'). Navigates to /ai-agent-connect/{slug}.",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$"
+          }
+        },
+        "required": [
+          "slug"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "browse_ai_capability_categories",
+      "description": "Navigate to the AI Capability category listing page to browse all available categories (CRM, DevOps, Finance, Marketing, Productivity, and more).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "view_pricing",
+      "description": "Navigate to the pricing page to see available subscription plans (Free, Lite, Starter, Pro, Business, Enterprise) for running AI Capabilities on Vinkius.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "get_current_capability_info",
+      "description": "Get structured information about the AI Capability on the current page — title, slug, description, category, listing type, and tool count. Only works on /ai-agent-connect/[slug] pages.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "untrustedContentHint": true
+      }
+    },
+    {
+      "name": "start_authentication",
+      "description": "Open the authentication modal to sign in or create an account with Google or GitHub. Requires explicit user consent.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    },
+    {
+      "name": "navigate_to_client_guide",
+      "description": "Navigate to a step-by-step setup guide that explains how to give a specific AI client (Claude, ChatGPT, Gemini, and more) access to a specific AI Capability. Use this when the user asks how to connect an AI Capability to a particular AI client.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "The AI Capability slug — a URL-safe identifier such as \"github\", \"slack\", \"notion\", or \"stripe\".",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$"
+          },
+          "client": {
+            "type": "string",
+            "enum": [
+              "claude",
+              "chatgpt",
+              "gemini",
+              "perplexity",
+              "grok",
+              "copilot",
+              "cursor",
+              "vscode",
+              "windsurf",
+              "jetbrains",
+              "cline",
+              "langchain",
+              "vercel",
+              "lovable",
+              "zai",
+              "raycast",
+              "qwen",
+              "kimi",
+              "mistral"
+            ],
+            "description": "The AI client to set up (e.g. \"claude\", \"chatgpt\", \"gemini\")."
+          }
+        },
+        "required": [
+          "slug",
+          "client"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": false
+      }
+    }
+  ],
+  "discovery": {
+    "llms_txt": "https://vinkius.com/llms.txt",
+    "sitemap": "https://vinkius.com/sitemap-index.xml",
+    "robots": "https://vinkius.com/robots.txt",
+    "well_known_mcp": "https://vinkius.com/.well-known/mcp.json"
+  },
+  "contact": {
+    "url": "https://vinkius.com",
+    "support": "https://cloud.vinkius.com"
+  }
+}

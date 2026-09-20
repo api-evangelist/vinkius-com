@@ -1,0 +1,21 @@
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/learn/en/mcp-fusion/cli
+docs: https://vinkius.com/learn/en/mcp-fusion/cli
+name: mcpfusion
+description: First-party CLI of the MCP Fusion framework - scaffolds an MCP server, runs it locally, locks its capability surface and deploys it to Vinkius Cloud.
+package: '@mcpfusion/core'
+install:
+- method: npx
+  command: npx @mcpfusion/core create my-server
+commands:
+- group: scaffold
+  commands: [mcpfusion create my-server]
+- group: develop
+  commands: [mcpfusion dev --server ./src/server.ts, mcpfusion yaml dev, mcpfusion inspect]
+- group: governance
+  commands: [mcpfusion lock, mcpfusion lock --check ./dist/server.js]
+- group: deploy
+  commands: [mcpfusion deploy, mcpfusion remote --server-id <id> --token <token>, mcpfusion token <token>]
+key_flows:
+- create -> dev -> inspect -> lock -> deploy (hosting on Vinkius Cloud)

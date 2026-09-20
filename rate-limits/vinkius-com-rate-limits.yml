@@ -1,0 +1,31 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Vinkius
+providerId: vinkius-com
+created: '2026-09-20'
+modified: '2026-09-20'
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/learn/en/connect-sdk/reference
+sources:
+- https://vinkius.com/learn/en/connect-sdk/reference
+- https://vinkius.com/learn/en/connect-sdk/errors
+- https://vinkius.com/en/pricing
+description: Vinkius documents the throttling SIGNALS (429, Retry-After, 402 overage) but publishes no numeric request-rate limit. The only published numbers are the monthly call allowances per plan, recorded in plans/.
+limit_count: 0
+note: No per-second / per-minute rate limit is published. Monthly call quotas are plan allowances, not rate limits - see plans/vinkius-com-plans-pricing.yml.
+headers:
+  retryAfter: Retry-After
+  requestId: X-Request-Id
+responseCodes:
+  throttled: 429
+  quotaExhausted: 429
+  overageBlocked: 402
+signals:
+- status: 429
+  meaning: Too many requests (SDK RateLimitError, retryAfterMs from Retry-After)
+- status: 429
+  meaning: Plan quota exhausted when the body carries isError true or an upgrade_url (SDK QuotaError)
+- status: 402
+  meaning: Overage protection rejected the request (SDK OverageError, upgradeUrl)
+limits: []

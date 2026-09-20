@@ -1,0 +1,18 @@
+generated: '2026-09-20'
+method: probed
+source: https://edge.vinkius.com/.well-known/oauth-authorization-server
+docs: https://vinkius.com/learn/en/tokens
+description: OAuth scopes advertised by the Vinkius Edge authorization server (the MCP resource server). Descriptions are not published; only the scope names are.
+authorization_server: https://edge.vinkius.com
+authorization_endpoint: https://edge.vinkius.com/oauth/authorize
+token_endpoint: https://edge.vinkius.com/oauth/token
+registration_endpoint: https://edge.vinkius.com/oauth/register
+grant_types: [authorization_code, refresh_token]
+pkce: [S256]
+scopes:
+- name: mcp:read
+  description: null
+  note: Name only - the metadata document and docs publish no description.
+- name: mcp:write
+  description: null
+  note: Name only - the metadata document and docs publish no description.

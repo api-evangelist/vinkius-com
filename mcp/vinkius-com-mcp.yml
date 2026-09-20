@@ -1,0 +1,55 @@
+generated: '2026-09-20'
+method: searched
+status: published
+source: https://vinkius.com/learn/en/tokens and https://vinkius.com/en/how-it-works (endpoint shape), https://edge.vinkius.com/.well-known/oauth-protected-resource (probed), https://github.com/vinkius-labs/discover-mcp (stdio package)
+description: Vinkius IS an MCP platform - every Connector in its catalog (9,258 connectors / 63,093 capabilities per llms.txt on 2026-09-20) is a hosted remote MCP server on the Vinkius Edge, addressed by one URL that embeds a per-connection token. A local stdio gateway package is also published.
+deployment:
+  mode: both
+  endpoint: https://edge.vinkius.com/{connection_token}/mcp
+  install: npx -y @vinkius-core/discover-mcp
+  package: https://www.npmjs.com/package/@vinkius-core/discover-mcp
+  auth: api-key
+  verified: probed
+  note: >-
+    The endpoint is TEMPLATED - the docs publish it as https://edge.vinkius.com/vk_YOUR_TOKEN/mcp, where the
+    path segment is a per-connection vk_live_* token issued in the Vinkius Cloud console. There is no single
+    anonymous URL. The edge host additionally serves RFC 9728 protected-resource and RFC 8414
+    authorization-server metadata (scopes mcp:read, mcp:write; PKCE S256; dynamic client registration), so
+    OAuth clients are supported alongside the token-in-URL form.
+server:
+  name: vinkius-edge
+  transport: streamable-http
+  url: https://edge.vinkius.com/{connection_token}/mcp
+  auth: connection token in URL path (vk_live_*), or OAuth 2.1 per the edge metadata
+  protected_resource: well-known/vinkius-com-edge-oauth-protected-resource.json
+  authorization_server: well-known/vinkius-com-edge-oauth-authorization-server.json
+local:
+  name: '@vinkius-core/discover-mcp'
+  transport: stdio
+  install: npx -y @vinkius-core/discover-mcp
+  source: https://github.com/vinkius-labs/discover-mcp
+  version: 0.2.2
+  published: '2026-05-03'
+x-evidence:
+  tools_list_probe:
+    url: https://edge.vinkius.com/vk_YOUR_TOKEN/mcp
+    method: POST tools/list (the docs placeholder token, no credential)
+    http_status: 404
+    body: '{"error":"Server not found or inactive"}'
+    observed_headers:
+      access-control-expose-headers: Mcp-Session-Id,Mcp-Protocol-Version,X-Request-Id,X-AI-System
+      x-powered-by: Vinkius
+      x-ai-act-disclosure: EU Reg. 2024/1689 Art. 13
+    fetched: '2026-09-20'
+  finding: >-
+    Live tool schemas are gated behind a connection token; none was used. The connector pages on vinkius.com
+    embed per-page preview tokens, which were NOT used - this profile is built without credentials of any kind.
+tools: []
+tools_note: >-
+  No tool list is recorded because tools are per-connector (each of the ~9k connectors exposes its own) and
+  tools/list requires a token. Per-connector tool names are published on each connector page under
+  https://vinkius.com/en/ai-agent-connect/<slug>.
+site_tool_manifest:
+  file: well-known/vinkius-com-mcp.json
+  url: https://vinkius.com/.well-known/mcp.json
+  note: A separate, WebMCP-style manifest describing 7 in-page tools of the vinkius.com website (search_ai_capabilities, navigate_to_ai_capability, browse_ai_capability_categories, view_pricing, get_current_capability_info, start_authentication, navigate_to_client_guide). It is not the Edge MCP server.

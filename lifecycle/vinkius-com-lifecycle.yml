@@ -1,0 +1,22 @@
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/legal/service-level-agreement, https://github.com/vinkius-labs/ai-connect-sdk/blob/main/CHANGELOG.md, https://github.com/vinkius-labs/ai-connect-sdk/blob/main/SECURITY.md
+versioning:
+  api: No API version is published - the API base is unversioned (https://api.vinkius.com) and no versioning policy is documented.
+  sdk: Semantic Versioning, Keep a Changelog format; currently pre-1.0 (0.2.0, 2026-09-14).
+  sdk_support: '"Pre-1.0 releases receive security fixes on the latest minor version."'
+deprecation:
+  policy_published: false
+  sunset_headers: not documented
+sla:
+  url: https://vinkius.com/legal/service-level-agreement
+  effective: '2026-03-03'
+  uptime_commitment: 99.9% monthly, paid plans only
+  scheduled_maintenance_notice: at least 7 days in advance
+  maintenance_windows: Saturdays 02:00-06:00 UTC (preferred), Sundays 02:00-06:00 UTC (alternative)
+  emergency_maintenance: at least 4 hours advance notice when possible
+  remedy: service credits against the monthly subscription fee
+status_page:
+  published: false
+  note: The SLA page references https://status.Vinkius.com but status.vinkius.com did not resolve on 2026-09-20 (curl 000), so no StatusPage pointer is emitted.
+deprecated_operations: []

@@ -1,0 +1,1 @@
+{"resource":"https://edge.vinkius.com","authorization_servers":["https://edge.vinkius.com"],"scopes_supported":["mcp:read","mcp:write"],"bearer_methods_supported":["header"]}

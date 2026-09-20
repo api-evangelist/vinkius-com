@@ -1,0 +1,81 @@
+generated: '2026-09-20'
+method: searched
+source: registry.npmjs.org and repo.packagist.org metadata endpoints, github.com/vinkius-labs, https://vinkius.com/learn/en/connect-sdk
+description: First-party packages published by Vinkius (GitHub org vinkius-labs). Versions and dates read from the registry metadata endpoints on 2026-09-20.
+packages:
+- name: '@vinkius/connect'
+  registry: npm
+  url: https://www.npmjs.com/package/@vinkius/connect
+  repository: https://github.com/vinkius-labs/ai-connect-sdk
+  kind: sdk
+  language: TypeScript
+  official: true
+  license: Apache-2.0
+  version: 0.2.0
+  published: '2026-09-14'
+  description: AI Connect SDK - the server-side client for the Vinkius API (https://api.vinkius.com); users, connectors, credentials, catalog, capabilities() and execute(), with adapters for OpenAI, Anthropic, Gemini, Vercel AI SDK, LangChain, LlamaIndex and Workers AI.
+  docs: https://vinkius.com/learn/en/connect-sdk
+- name: vinkius/laravel-mcp-connect
+  registry: packagist
+  url: https://packagist.org/packages/vinkius/laravel-mcp-connect
+  repository: https://github.com/vinkius-labs/laravel-mcp-connect
+  kind: sdk
+  language: PHP
+  official: true
+  license: Apache-2.0
+  version: v1.0.0
+  published: '2026-05-08'
+  description: Laravel SDK for the Vinkius MCP Catalog - discover, activate and execute governed MCP servers.
+- name: '@vinkius-core/discover-mcp'
+  registry: npm
+  url: https://www.npmjs.com/package/@vinkius-core/discover-mcp
+  repository: https://github.com/vinkius-labs/discover-mcp
+  kind: mcp-server
+  language: TypeScript
+  official: true
+  license: Apache-2.0
+  version: 0.2.2
+  published: '2026-05-03'
+  description: Local stdio MCP gateway (npx -y @vinkius-core/discover-mcp) that lets an agent search, activate and call servers in the Vinkius catalog.
+- name: '@mcpfusion/core'
+  registry: npm
+  url: https://www.npmjs.com/package/@mcpfusion/core
+  repository: https://github.com/vinkius-labs/mcpfusion
+  kind: framework
+  language: TypeScript
+  official: true
+  license: Apache-2.0
+  version: 5.0.10
+  published: '2026-09-17'
+  description: MCP Fusion - the open source TypeScript framework for building MCP servers deployed to Vinkius Cloud; also carries the mcpfusion CLI. Sibling packages at the same version - @mcpfusion/openapi-gen, oauth, jwt, api-key, testing, inspector, skills, yaml, a2a, swarm, aws, cloudflare, vercel, n8n, prisma-gen.
+  docs: https://vinkius.com/learn/en/mcp-fusion
+- name: '@mcpfusion/openapi-gen'
+  registry: npm
+  url: https://www.npmjs.com/package/@mcpfusion/openapi-gen
+  repository: https://github.com/vinkius-labs/mcpfusion
+  kind: generator
+  language: TypeScript
+  official: true
+  version: 5.0.10
+  published: '2026-09-17'
+  description: OpenAPI 3.x / Swagger 2.0 to MCP server generator.
+- name: '@vurb/core'
+  registry: npm
+  url: https://www.npmjs.com/package/@vurb/core
+  repository: https://github.com/vinkius-labs/vurb.ts
+  kind: framework
+  language: TypeScript
+  official: true
+  version: 3.19.6
+  published: '2026-05-11'
+  note: Earlier name of the MVA framework now published as @mcpfusion/core; last release 2026-05-11 while @mcpfusion/core continues, so treat as superseded.
+- name: create-my-mcp-server
+  registry: npm
+  url: https://www.npmjs.com/package/create-my-mcp-server
+  repository: https://github.com/vinkius-labs/create-my-mcp-server
+  kind: cli
+  language: TypeScript
+  official: true
+  version: 1.0.0
+  published: '2026-03-22'
+  description: Interactive scaffolder for MCP servers (built on vurb.ts).

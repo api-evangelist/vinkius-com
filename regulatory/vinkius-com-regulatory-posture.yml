@@ -1,0 +1,55 @@
+generated: '2026-09-20'
+method: searched
+probe: true
+source: https://vinkius.com/legal/ pages and live response headers on https://edge.vinkius.com, 2026-09-20
+note: Harvest only - records what Vinkius publishes; makes no claim about which regimes apply.
+signals:
+  subprocessors:
+    url: https://vinkius.com/legal/subprocessors
+    http_status: 200
+    effective: '2026-03-03'
+    listed:
+    - Amazon Web Services (AWS)
+    - Stripe, Inc.
+    - Amazon SES
+    - Google Analytics
+    - Meta Platforms, Inc. (Facebook Pixel)
+    change_notice: 30 days' prior written notice
+  data_residency:
+    url: https://vinkius.com/legal/subprocessors
+    stated: 'AWS data processing location: "EU (Frankfurt, Germany; Dublin, Ireland)"'
+    note: Stated as the hosting subprocessor's processing location; no customer-selectable region is documented on self-serve
+      plans (Enterprise lists "multi-region support").
+  incident_notification:
+    url: https://vinkius.com/legal/security
+    stated_sla: '"Vinkius will notify the relevant supervisory authority within 72 hours of becoming aware of the breach,
+      as required by GDPR Article 33. Affected customers and data subjects will be notified without undue delay when legally
+      required or when we determine notification is appropriate."'
+  data_subject_request:
+    url: https://vinkius.com/legal/privacy-policy
+    channel: email to privacy[at]Vinkius.com or dpo[at]Vinkius.com (as written on the page)
+    stated_sla: '"We will respond to your request within 30 days (GDPR - may be extended by 2 months for complex requests
+      with notification) or 45 days (CCPA - may be extended by 45 days with notification)."'
+observed:
+  ai_disclosure_headers:
+    observed_headers:
+      host: edge.vinkius.com
+      x-ai-system: 'true'
+      x-ai-provider: Vinkius MCP Platform
+      x-ai-act-disclosure: EU Reg. 2024/1689 Art. 13
+      x-content-provenance: ai-assisted
+      x-provenance-model: mcp-tool-execution
+    note: 'Machine-readable AI-system disclosure headers are returned on every edge response, including errors (probed 2026-09-20).
+      Recorded as an observation only: no documentation page describing the disclosure was found, so no ai_transparency signal
+      or AITransparency pointer is emitted.'
+not_found:
+- ai_transparency
+- sbom
+- support_lifetime
+- accessibility_conformance
+- training_data_summary
+- global_privacy_control
+- age_assurance
+- notice_and_action
+- transparency_report
+- exit_assistance

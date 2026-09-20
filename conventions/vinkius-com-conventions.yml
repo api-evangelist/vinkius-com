@@ -1,0 +1,68 @@
+generated: '2026-09-20'
+method: searched
+source: https://vinkius.com/learn/en/connect-sdk/reference, https://vinkius.com/learn/en/connect-sdk/errors, https://github.com/vinkius-labs/ai-connect-sdk (src/), live unauthenticated probes of api.vinkius.com and edge.vinkius.com
+description: Cross-cutting request/response semantics of the Vinkius API (api.vinkius.com) as documented for the first-party Connect SDK. No OpenAPI is published; routes are taken from the open source SDK.
+base_url: https://api.vinkius.com
+api_style: REST over HTTPS, JSON
+known_routes:
+- GET /catalog/mcps
+- GET /catalog/mcps/{slug}
+- GET /marketplace/search  (answers 200 unauthenticated)
+- /apps/{app}/users
+- /apps/{app}/users/{externalId}/mcps
+- /apps/{app}/users/{externalId}/mcps/{connection}/credentials
+- /apps/{app}/users/{externalId}/mcps/{connection}/tokens
+authentication:
+  scheme: Authorization Bearer vk_app_sk_* application key
+  detail: authentication/vinkius-com-authentication.yml
+idempotency:
+  supported: true
+  coverage: partial
+  mechanism: Idempotency-Key request header
+  scope:
+  - capability execution (execute(args, { idempotencyKey }))
+  natural_idempotency:
+  - user creation (documented as an idempotent upsert)
+  - connection creation (get-or-create)
+  retention: not documented
+  detail: >-
+    The header is sent only for capability execution and only when the caller supplies a non-empty key;
+    ordinary POST and PATCH requests carry no replay protection and are not retried by the SDK.
+  docs: https://vinkius.com/learn/en/connect-sdk/errors
+reversibility:
+  status: none-documented
+  operations: []
+  note: >-
+    No cancel/undo/rollback operation or reversal window is documented for the API. Connections can be
+    deleted and tokens rotated, but those are lifecycle operations, not reversals of an executed capability;
+    whether an executed action can be undone depends on the third-party app behind the connector.
+pagination:
+  style: page
+  response_fields:
+    meta.current_page: 1-based current page
+    meta.last_page: last page number
+  source: src/core/pagination.ts in vinkius-labs/ai-connect-sdk
+field_expansion:
+  supported: false
+request_tracing:
+  header: X-Request-Id
+  note: Returned on edge responses (probed) and surfaced by the SDK as error.requestId.
+versioning:
+  detail: lifecycle/vinkius-com-lifecycle.yml
+errors:
+  envelope: '{"error": "<message>"}'
+  detail: errors/vinkius-com-problem-types.yml
+retries:
+  sdk_default: initial attempt plus two retries on network error, timeout, 429, 502, 503, 504
+  retry_safe: GET, PUT, DELETE, user creation, connection creation, and execution with an idempotencyKey
+  backoff: full jitter, exponential from 250 ms capped at 4,000 ms; Retry-After takes precedence (also capped at 4,000 ms)
+rate_limits:
+  signal: HTTP 429 with Retry-After; plan quota exhaustion is 429 with an upgrade_url; overage protection is 402
+  detail: rate-limits/vinkius-com-rate-limits.yml
+ai_disclosure_headers:
+  observed_on: https://edge.vinkius.com
+  headers:
+    x-ai-system: 'true'
+    x-ai-provider: Vinkius MCP Platform
+    x-ai-act-disclosure: EU Reg. 2024/1689 Art. 13
+    x-content-provenance: ai-assisted
