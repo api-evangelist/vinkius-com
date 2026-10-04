@@ -9,6 +9,21 @@ url: https://raw.githubusercontent.com/api-evangelist/vinkius-com/refs/heads/mai
 x-type: company
 x-source: harvest:direct-request
 x-tier: profiled
+deliveryModel:
+  model: saas
+  license_evidence:
+    not_product:
+    - vinkius-labs/ai-connect-sdk
+  open_source: unknown
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: low
+  source:
+  - pricing
+  - repository-not-product
+  generated: '2026-09-25'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-09-20'
 modified: '2026-09-20'
@@ -20,7 +35,7 @@ tags:
 - Connectors
 - AI Governance
 - Developer Tools
-- agent-native
+- Agent-Native
 tags_raw:
 - Company
 - MCP
