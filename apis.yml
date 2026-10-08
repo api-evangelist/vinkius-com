@@ -111,6 +111,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/vinkius-com-rate-limits.yml
 - url: https://vinkius.com/blog
   type: Blog
 - url: https://vinkius.com/rss.xml
