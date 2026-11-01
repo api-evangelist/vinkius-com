@@ -64,5 +64,120 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vinkius is a company surfaced via the API Evangelist harvest backlog (source: direct-request) and added to the network as a stub for full-pipeline profiling.
-- https://vinkius.com/
+Vinkius is an AI connectivity cloud: a managed catalog of thousands of hosted Model Context Protocol (MCP) Connectors that AI agents call through one URL per connector, working in ChatGPT, Claude, Gemini, Cursor and other MCP clients. Connectors run in a sealed sandbox on the Vinkius Edge (edge.vinkius.com) with credential encryption, governance policies, audit trails, spend controls and log streaming. Developers build on it with the AI Connect SDK (@vinkius/connect) over the Vinkius API (api.vinkius.com), and publish their own connectors with the open source MCP Fusion TypeScript framework.
+
+**Areas:** Company · MCP · AI Agents · Integration · Connectors · AI Governance · Developer Tools · Agent-Native
+
+## Vinkius on APIs.io
+
+Everything profiled for Vinkius is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vinkius-com/](https://apis.io/providers/vinkius-com/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Vinkius API](https://apis.io/apis/vinkius-com/vinkius-api/) — REST API behind the AI Connect SDK: application users, connector connections, write-only credentials, connection tokens, catalog and marketplace search,…
+- [Vinkius Edge MCP](https://apis.io/apis/vinkius-com/vinkius-edge-mcp/) — The hosted MCP data plane. Every connector is a remote MCP server at https://edge.vinkius.com/{connection_token}/mcp; the host also serves OAuth 2…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [vinkius-edge](https://apis.io/servers/vinkius-com/vinkius-edge/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Vinkius Com Authentication](https://apis.io/security/vinkius-com/vinkius-com-authentication/)
+- [Vinkius Com Domain Security](https://apis.io/security/vinkius-com/vinkius-com-domain-security/)
+- [Vinkius Com Vulnerability Disclosure](https://apis.io/security/vinkius-com/vinkius-com-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Vinkius Com Scopes](https://apis.io/scopes/vinkius-com/vinkius-com-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Vinkius Com Plans Pricing](https://apis.io/plans/vinkius-com/vinkius-com-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Vinkius Com Rate Limits](https://apis.io/rate-limits/vinkius-com/vinkius-com-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://vinkius.com/)
+- [Documentation](https://vinkius.com/learn/en)
+- [Pricing](https://vinkius.com/en/pricing)
+- [Sign up](https://cloud.vinkius.com/)
+- [Support](https://github.com/vinkius-labs/vinkius-issues)
+- [Blog](https://vinkius.com/blog)
+- [Terms of service](https://vinkius.com/legal/terms-and-conditions)
+- [Privacy policy](https://vinkius.com/legal/privacy-policy)
+- [GitHub](https://github.com/vinkius-labs)
+
+## API Evangelist rating
+
+**Kin Score 48.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 71.4 |
+| Access clarity | 76.3 |
+
+**Agent readiness 16.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | templated |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 55.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/vinkius-com/](https://apis.io/providers/vinkius-com/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Vinkius: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vinkius-com/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
